@@ -30,3 +30,17 @@ img {
         padding: 0;
     }
 }
+
+.link {
+    color: black;
+    font-weight: normal;
+}
+
+
+.link.active {
+    font-weight: bold;
+}
+
+.pending {
+    opacity: 0.6;
+}
