@@ -1,0 +1,10 @@
+.headerDiv {
+    display: flex;
+    justify-content: space-between;
+    background-color: grey;
+    padding: 8px 12px;
+}
+
+img {
+    height: 40px
+}
