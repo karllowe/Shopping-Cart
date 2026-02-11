@@ -7,7 +7,13 @@ function Header() {
     return (
         <div className={classes.headerDiv}>
             <img src={FlowOptimaLogo} alt="FlowOptima logo" />
-            <IconButton name={"shopping cart"} type={"primary"} icon={cartOutline} />
+            <div className={classes.rightSide}>
+                <ul className={classes.headerNavButtons}>
+                    <li>Home</li>
+                    <li>Browse</li>
+                </ul>
+                <IconButton name={"shopping cart"} type={"primary"} icon={cartOutline} />
+            </div>
         </div>
     )
 }
