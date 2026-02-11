@@ -7,7 +7,7 @@ function Index() {
             <div className={classes.heroDiv}>
                 <h1>Karl's awesome shop!</h1>
                 <h2>Buy cool stuff here</h2>
-                <TextButton text={"Start shopping!"} type={"primary"} className={classes.CTA}/>
+                <TextButton text={"Start shopping!"} type={"primary"} className={classes.CTA} link={"browse"}/>
             </div>
         </main>
     )
