@@ -13,6 +13,7 @@ function Cart () {
             <div className={classes.detailColumn}>
                 <h2>Shopping cart</h2>
                 <section className={classes.cartList}>
+                    <p hidden={shoppingCart.length>0} className={classes.emptyMessage}>Your cart's empty!</p>
                     {
                         shoppingCart.map((item) => (
                             <div key={item.id} className={classes.cartItem}>

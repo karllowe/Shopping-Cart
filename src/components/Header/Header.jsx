@@ -5,7 +5,7 @@ import { IconButton } from "../iconButton/IconButton";
 import {NavLink} from "react-router-dom";
 
 function Header({shoppingCart}) {
-    const itemsInShoppingCart = shoppingCart.length;
+    const itemsInShoppingCart = shoppingCart.reduce((sum, item) => sum + item.cartQty, 0);
 
     const links = [
         {
@@ -39,8 +39,10 @@ function Header({shoppingCart}) {
                         </li>
                     ))}
                 </ul>
-                <IconButton name={"shopping cart"} type={"primary"} icon={cartOutline} link={"cart"}/>
-                <p hidden={itemsInShoppingCart==0}>{itemsInShoppingCart} items</p>
+                <div className={classes.cartDiv}>
+                    <IconButton name={"shopping cart"} type={"primary"} icon={cartOutline} link={"cart"}/>
+                    <p hidden={itemsInShoppingCart==0}>{itemsInShoppingCart} items</p>
+                </div>
             </div>
         </div>
     )

@@ -8,7 +8,6 @@ function UpdateQuantity({item, items, setItems}) {
         const newQty = item.cartQty +1;
         const updatedItem = {...item, cartQty: newQty};
         const updatedCart = shoppingCart.map((i) => i.id === item.id ? updatedItem : i);
-        setShoppingCart(updatedCart);
         const updatedItems = items.map((i) => {
             if (i.id !== item.id) {
                 return i
@@ -16,6 +15,7 @@ function UpdateQuantity({item, items, setItems}) {
                 return {...i, cartQty:newQty}
             }
         });
+        setShoppingCart(updatedCart);
         setItems(updatedItems);
     }
 

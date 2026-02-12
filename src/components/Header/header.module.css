@@ -48,3 +48,8 @@ img {
 .pending {
     opacity: 0.6;
 }
+
+.cartDiv {
+    display: flex;
+    align-items: center;
+}
