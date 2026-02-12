@@ -1,0 +1,28 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    min-width: 240px;
+    margin-bottom: auto;
+}
+
+.body p {
+    font-size: 0.9rem;
+}
+
+.subtotalDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.body button {
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 12px;
+}
