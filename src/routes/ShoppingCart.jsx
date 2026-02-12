@@ -24,7 +24,7 @@ function Cart () {
                                     </div>
                                     <p>{item.description}</p>
                                     <div className={classes.bottomRow}>
-                                        <UpdateQuantity current={item.cartQty}/>
+                                        <UpdateQuantity item={item}/>
                                         <DeleteFromCartButton item={item} items={items} setItems={setItems}/>
                                     </div>
                                 </div>

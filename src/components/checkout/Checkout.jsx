@@ -4,8 +4,8 @@ import classes from "./checkout.module.css";
 function Checkout() {
     const {shoppingCart} = useOutletContext();
 
-    const totalItems = shoppingCart.length;
-    const subtotal = shoppingCart.reduce((sum, item) => sum + item.price, 0)
+    const totalItems = shoppingCart.reduce((sum, item)=> sum + item.cartQty, 0);
+    const subtotal = shoppingCart.reduce((sum, item) => sum + (item.cartQty * item.price), 0)
 
     return (
         <div className={classes.body}>

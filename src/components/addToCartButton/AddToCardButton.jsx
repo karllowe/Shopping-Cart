@@ -6,8 +6,8 @@ function AddToCartButton({item, items, setItems}) {
     const {shoppingCart, setShoppingCart} = useOutletContext();
 
     const handleClick = () => {
-        const currentCartQuantity = item.cartQty;
-        const updatedItem = {...item, inCart: true, cartQty: currentCartQuantity+1};
+        // const currentCartQuantity = item.cartQty;
+        const updatedItem = {...item, inCart: true, cartQty: 1};
         const newItems = items.map((i) => i.id === item.id ? updatedItem : i)
         setItems(newItems);
 
