@@ -1,16 +1,32 @@
 .main {
     color: black;
-    margin: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    overflow: hidden;
+}
+
+.browseToolBar {
+    display: flex;
+    align-items: center;
+}
+
+.gridDiv{
+    overflow: hidden;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-template-rows: 1fr;
-    margin: 12px;
+    grid-auto-rows: auto;
     column-gap: 12px;
     row-gap: 12px;
-    overflow: scroll;
-    height: 100%;
+    overflow: auto;
+    
 }

@@ -20,20 +20,22 @@ function Browse() {
     })();
   }, []);
 
-  console.table(items);
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
   return (
     <main className={classes.main}>
-      <h2>Let's shop!</h2>
-      <section className={classes.grid}>
-        {items.map((item) => (
-            <ShoppingCard item={item} key={item.id}/>
-            )
-        )}
-      </section>
+      <div className={classes.browseToolBar}>
+          <h2>Let's shop!</h2>
+      </div>
+      <div className={classes.gridDiv}>
+          <section className={classes.grid}>
+            {items.map((item) => (
+                <ShoppingCard item={item} key={item.id}/>
+                )
+            )}
+          </section>
+      </div>
     </main>
   );
 }
