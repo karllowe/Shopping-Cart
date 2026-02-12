@@ -1,25 +1,32 @@
 import { useEffect, useState } from "react";
+import {useOutletContext} from "react-router-dom";
 import classes from "./browse.module.css";
 import { ShoppingCard } from "../components/shoppingCard/ShoppingCard";
 import { shoppingCartHelper } from "./helpers/shoppingCart";
 
 function Browse() {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const {items, setItems, itemsLoaded, setItemsLoaded} = useOutletContext();
+  const [loading, setLoading] = useState(!itemsLoaded);
   const [error, setError] = useState(null);
   
 
   useEffect(() => {
+    if (itemsLoaded === true) {
+      return
+    };
+
     (async () => {
       try {
         const data = await shoppingCartHelper.fetchItems();
         setItems(data);
         setLoading(false);
+        setItemsLoaded(true)
       } catch (error) {
         setError(error);
+        setItemsLoaded(false)
       }
     })();
-  }, []);
+  }, [itemsLoaded,setItems, setItemsLoaded]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;

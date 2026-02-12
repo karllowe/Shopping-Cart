@@ -5,6 +5,7 @@ import './index.css';
 import {Root} from "./routes/root";
 import {Index} from "./routes/index";
 import { Browse } from './routes/browse';
+// import { loader as browseLoader } from './routes/browse.loader';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
       },
       {
         path: "browse",
-        element: <Browse />
+        element: <Browse />,
+        // loader: browseLoader
       }
     ]
   }
