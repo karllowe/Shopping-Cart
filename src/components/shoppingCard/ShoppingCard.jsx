@@ -1,5 +1,5 @@
 import classes from "./shoppingCard.module.css";
-import { TextButton } from "../textButton/TextButton";
+import { AddToCartButton } from "../addToCartButton/AddToCardButton";
 
 function ShoppingCard({item}) {
     return(
@@ -9,7 +9,7 @@ function ShoppingCard({item}) {
                 <p className={classes.title}>{item.title}</p>
                 <div className={classes.bottomRow}>
                     <p>£{item.price}</p>
-                    <TextButton text={"Add"} type={"primary"}/>
+                    <AddToCartButton id={item.id}/>
                 </div>
             </div>
         </div>
