@@ -1,0 +1,34 @@
+import {useOutletContext} from "react-router-dom";
+import classes from "./cart.module.css";
+import { DeleteFromCartButton } from "../components/deleteFromShoppingCart/deleteFromCartButton";
+
+function Cart () {
+    const {shoppingCart} = useOutletContext();
+      const {items, setItems} = useOutletContext();
+    return (
+        <main className={classes.main}>
+            <h2>Shopping cart</h2>
+            <section className={classes.cartList}>
+                {
+                    shoppingCart.map((item) => (
+                        <div key={item.id} className={classes.cartItem}>
+                            <img src={item.image} alt={item.title} />
+                            <div className={classes.rightDiv}>
+                                <div className={classes.titleAndPrice}>
+                                    <h3>{item.title}</h3>
+                                    <h4>£{item.price}</h4>
+                                </div>
+                                <p>{item.description}</p>
+                                <div className={classes.bottomRow}>
+                                    <DeleteFromCartButton item={item} items={items} setItems={setItems}/>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </section>
+        </main>
+    )
+}
+
+export {Cart}
