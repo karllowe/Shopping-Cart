@@ -2,6 +2,7 @@ import {useOutletContext} from "react-router-dom";
 import classes from "./cart.module.css";
 import { DeleteFromCartButton } from "../components/deleteFromShoppingCart/deleteFromCartButton";
 import {Checkout} from "../components/checkout/Checkout";
+import { UpdateQuantity } from "../components/updateQuantity/UpdateQuantity";
 
 function Cart () {
     const {shoppingCart} = useOutletContext();
@@ -23,6 +24,7 @@ function Cart () {
                                     </div>
                                     <p>{item.description}</p>
                                     <div className={classes.bottomRow}>
+                                        <UpdateQuantity current={item.cartQty}/>
                                         <DeleteFromCartButton item={item} items={items} setItems={setItems}/>
                                     </div>
                                 </div>
