@@ -40,7 +40,7 @@ function Header({shoppingCart}) {
                     ))}
                 </ul>
                 <IconButton name={"shopping cart"} type={"primary"} icon={cartOutline} />
-                <p>{itemsInShoppingCart}</p>
+                <p hidden={itemsInShoppingCart==0}>{itemsInShoppingCart} items</p>
             </div>
         </div>
     )
