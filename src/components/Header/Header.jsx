@@ -4,7 +4,9 @@ import cartOutline from "../../assets/cart-outline.png";
 import { IconButton } from "../iconButton/iconButton";
 import {NavLink} from "react-router-dom";
 
-function Header() {
+function Header({shoppingCart}) {
+    const itemsInShoppingCart = shoppingCart.length;
+
     const links = [
         {
             name:"Home",
@@ -38,6 +40,7 @@ function Header() {
                     ))}
                 </ul>
                 <IconButton name={"shopping cart"} type={"primary"} icon={cartOutline} />
+                <p>{itemsInShoppingCart}</p>
             </div>
         </div>
     )

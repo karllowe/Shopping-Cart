@@ -9,7 +9,7 @@ function Root() {
 
     return (
         <div className={classes.body}>
-            <Header />
+            <Header shoppingCart={shoppingCart}/>
             <Outlet context={{shoppingCart, setShoppingCart}}/>
         </div>
     )

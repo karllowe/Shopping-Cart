@@ -10,6 +10,7 @@ function ShoppingCard({item}) {
                 <div className={classes.bottomRow}>
                     <p>£{item.price}</p>
                     <AddToCartButton id={item.id}/>
+                    <p>{item.inCart.toString()}</p>
                 </div>
             </div>
         </div>

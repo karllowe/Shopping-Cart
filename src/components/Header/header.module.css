@@ -12,6 +12,10 @@
     gap: 2rem
 }
 
+.rightSide p {
+    color: black;
+}
+
 img {
     height: 40px
 }
