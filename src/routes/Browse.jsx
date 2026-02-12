@@ -32,7 +32,7 @@ function Browse() {
       <div className={classes.gridDiv}>
           <section className={classes.grid}>
             {items.map((item) => (
-                <ShoppingCard item={item} key={item.id}/>
+                <ShoppingCard item={item} key={item.id} items={items} setItems={setItems}/>
                 )
             )}
           </section>

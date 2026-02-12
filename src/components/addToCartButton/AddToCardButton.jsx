@@ -1,17 +1,24 @@
 import classes from "./addToCartButton.module.css";
 import { useOutletContext } from "react-router";
 
-function AddToCartButton({id}) {
+function AddToCartButton({item, items, setItems}) {
+
     const {shoppingCart, setShoppingCart} = useOutletContext();
 
     const handleClick = () => {
+        const updatedItem = {...item, inCart: true};
+        const newItems = items.map((i) => i.id === item.id ? updatedItem : i)
+        setItems(newItems);
+
         if (!Array.isArray(shoppingCart)) {
-            setShoppingCart([id]);
+            setShoppingCart([updatedItem]);
             return
         }
-        setShoppingCart([...shoppingCart, id]);
-        console.table(shoppingCart)
+        setShoppingCart([...shoppingCart, updatedItem]);
     };
+    if (item.inCart) {
+        return
+    }
     return (
         <button 
             className={classes.button}
