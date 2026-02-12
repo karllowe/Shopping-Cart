@@ -13,7 +13,7 @@ function Checkout() {
             <p>{totalItems} item{totalItems>1 || totalItems==0 ? "s" :""}</p>
             <div className={classes.subtotalDiv}>
                 <h3>Subtotal </h3>
-                <h3>£{subtotal}</h3>
+                <h3>£{subtotal.toFixed(2)}</h3>
             </div>
             <button>
                 Go to checkout

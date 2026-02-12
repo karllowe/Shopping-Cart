@@ -4,6 +4,7 @@
     padding: 12px;
     color: black;
     gap: 24px;
+    overflow: hidden;
 }
 
 .detailColumn {
@@ -14,6 +15,7 @@
 .cartList{
     display: flex;
     flex-direction: column;
+    overflow: auto;
     gap: 12px;
 }
 
@@ -38,10 +40,15 @@
     padding: 8px 0;
 }
 
+.rightDiv p {
+    max-width: 75ch;
+}
+
 .titleAndPrice {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
+    gap: 12px
 }
 
 .bottomRow {

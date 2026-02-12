@@ -19,7 +19,7 @@ function Cart () {
                                 <div className={classes.rightDiv}>
                                     <div className={classes.titleAndPrice}>
                                         <h3>{item.title}</h3>
-                                        <h4>£{item.price}</h4>
+                                        <h4>£{item.price.toFixed(2)}</h4>
                                     </div>
                                     <p>{item.description}</p>
                                     <div className={classes.bottomRow}>

@@ -1,5 +1,5 @@
 class Product {
-    constructor(id, title, price, description, category, image, inCart=false) {
+    constructor(id, title, price, description, category, image, inCart=false, cartQty=0) {
         this.id = id,
         this.title = title,
         this.price = price,
@@ -7,6 +7,7 @@ class Product {
         this.category = category,
         this.image = image,
         this.inCart = inCart;
+        this.cartQty = cartQty
     }
 }
 
@@ -17,7 +18,7 @@ const shoppingCartHelper = (() => {
     const res = await apiReturn.json();
 
     const resAsClass = res.map((item) => (
-        new Product(item.id, item.title, item.price, item.description, item.category, item.image, item.inCart)
+        new Product(item.id, item.title, item.price, item.description, item.category, item.image, item.inCart, item.cartQty)
     ))
 
     return resAsClass;

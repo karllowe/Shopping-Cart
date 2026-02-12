@@ -6,7 +6,8 @@ function AddToCartButton({item, items, setItems}) {
     const {shoppingCart, setShoppingCart} = useOutletContext();
 
     const handleClick = () => {
-        const updatedItem = {...item, inCart: true};
+        const currentCartQuantity = item.cartQty;
+        const updatedItem = {...item, inCart: true, cartQty: currentCartQuantity+1};
         const newItems = items.map((i) => i.id === item.id ? updatedItem : i)
         setItems(newItems);
 
@@ -14,7 +15,13 @@ function AddToCartButton({item, items, setItems}) {
             setShoppingCart([updatedItem]);
             return
         }
-        setShoppingCart([...shoppingCart, updatedItem]);
+
+        if (item.inCart) {
+            const newShoppingCart = shoppingCart.map((i) => i.id === item.id ? updatedItem : i);
+            setShoppingCart(newShoppingCart)
+        } else {
+            setShoppingCart([...shoppingCart, updatedItem]);
+        }      
     };
     if (item.inCart) {
         return
