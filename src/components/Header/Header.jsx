@@ -1,7 +1,7 @@
 import classes from "./header.module.css";
 import FlowOptimaLogo from "../../assets/FlowOptimaLogo.png";
 import cartOutline from "../../assets/cart-outline.png";
-import { IconButton } from "../iconButton/iconButton";
+import { IconButton } from "../iconButton/IconButton";
 import {NavLink} from "react-router-dom";
 
 function Header({shoppingCart}) {
