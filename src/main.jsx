@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import {Root} from "./routes/root";
 import {Index} from "./routes/index";
-import { Browse } from './routes/browse';
+import { Browse } from './routes/Browse.jsx';
 import {Cart} from "./routes/ShoppingCart";
 
 // import { loader as browseLoader } from './routes/browse.loader';
